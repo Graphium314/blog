@@ -23,8 +23,8 @@ const AboutHero: FC = () => (
           <Image
             src={aboutHero.atcoder.badgeUrl}
             alt={`AtCoder ${aboutHero.atcoder.username}のバッジ`}
-            // width={200}
-            // height={20}
+            width={100}
+            height={20}
             unoptimized
           />
         </a>

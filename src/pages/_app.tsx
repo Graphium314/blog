@@ -9,6 +9,7 @@ import "../styles/globals.scss";
 const navItems = [
   { href: "/", label: "About" },
   { href: "/posts", label: "投稿" },
+  { href: "/tools", label: "ツール" },
 ];
 
 export default function App({ Component, pageProps }: AppProps) {
