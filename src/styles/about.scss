@@ -1,5 +1,31 @@
 // About ページ用スタイル（ヒーロー・カード・SNS リンク）
 
+.about-language-switch {
+  display: inline-flex;
+  position: absolute;
+  top: 0.85rem;
+  right: 1rem;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 0.25rem 0.65rem;
+  border: 1px solid var(--border-soft);
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: #64748b;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: color 0.12s ease, background-color 0.12s ease, border-color 0.12s ease;
+
+  &:hover {
+    border-color: rgba(34, 197, 94, 0.32);
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--accent-dark);
+  }
+}
+
 .social-links {
   display: flex;
   flex-wrap: wrap;
@@ -124,6 +150,7 @@
 
   .about-hero-body {
     display: flex;
+    flex: 1 1 0;
     flex-direction: column;
     align-items: flex-start;
     gap: 0.25rem;

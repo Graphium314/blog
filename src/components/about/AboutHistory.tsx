@@ -1,23 +1,26 @@
 import type { FC } from "react";
-import { aboutHistory } from "@/data/about";
+import { aboutContent, type AboutLocale } from "@/data/about";
 
-const AboutHistory: FC = () => (
-  <div className="about-card history-card">
-    <h3>経歴</h3>
-    <div className="history-grid">
-      {aboutHistory.map((entry, index) => {
-        const [period, ...rest] = entry.split(" ");
-        const detail = rest.join(" ");
+interface AboutHistoryProps {
+  locale?: AboutLocale;
+}
 
-        return (
-          <div key={`${entry}-${index}`} className="history-row">
-            <div className="history-period">{period}</div>
-            <div className="history-detail">{detail}</div>
+const AboutHistory: FC<AboutHistoryProps> = ({ locale = "ja" }) => {
+  const { history, historyTitle } = aboutContent[locale];
+
+  return (
+    <div className="about-card history-card">
+      <h3>{historyTitle}</h3>
+      <div className="history-grid">
+        {history.map((entry) => (
+          <div key={`${entry.period}-${entry.detail}`} className="history-row">
+            <div className="history-period">{entry.period}</div>
+            <div className="history-detail">{entry.detail}</div>
           </div>
-        );
-      })}
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default AboutHistory;

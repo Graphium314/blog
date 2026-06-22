@@ -1,12 +1,20 @@
 import type { FC } from "react";
-import { aboutAffiliation } from "@/data/about";
+import { aboutContent, type AboutLocale } from "@/data/about";
 
-const AboutAffiliation: FC = () => (
-  <div className="about-affiliation">
-    {aboutAffiliation.map((item, index) => (
-      <p key={index}>{item}</p>
-    ))}
-  </div>
-);
+interface AboutAffiliationProps {
+  locale?: AboutLocale;
+}
+
+const AboutAffiliation: FC<AboutAffiliationProps> = ({ locale = "ja" }) => {
+  const { affiliation } = aboutContent[locale];
+
+  return (
+    <div className="about-affiliation">
+      {affiliation.map((item) => (
+        <p key={item}>{item}</p>
+      ))}
+    </div>
+  );
+};
 
 export default AboutAffiliation;
